@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Family-grown saffron from Ikenioun, 1,400 m, Morocco's Atlas mountains. Lab-tested in France to ISO 3632. From our field to your kitchen, no middleman.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Safran Excellence">
+<meta property="og:title" content="Safran Excellence · Our story & lab report">
+<meta property="og:description" content="Family-grown saffron from Ikenioun, 1,400 m. Lab-tested in France to ISO 3632. From our field to your kitchen.">
+<meta property="og:url" content="https://safranexcellence.com/">
+<meta property="og:image" content="https://safranexcellence.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://safranexcellence.com/">
+<title>Safran Excellence · Our story &amp; lab report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow reading column; full-bleed field photo opens, then alternating photo/text sections, offer card, contact strip. House charter: deep violet, gold, cream, mauve. */
+:root{
+  --violet:#24122A; --gold:#C9A24A; --cream:#F4ECE0; --mauve:#B0A0B4;
+  --bg:#F4ECE0; --surface:#FBF7F1; --fg:#24122A; --muted:#5E4B63; --line:#DCCFC0;
+  --accent:#8A6A1E; --btn-bg:#24122A; --btn-fg:#F4ECE0; --gold-ink:#8A6A1E;
+  --display:"Caladea",Georgia,"Times New Roman",serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A0D1F; --surface:#24122A; --fg:#F4ECE0; --muted:#B0A0B4; --line:#3D2A44;
+  --accent:#C9A24A; --btn-bg:#C9A24A; --btn-fg:#24122A; --gold-ink:#C9A24A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A0D1F; --surface:#24122A; --fg:#F4ECE0; --muted:#B0A0B4; --line:#3D2A44;
+  --accent:#C9A24A; --btn-bg:#C9A24A; --btn-fg:#24122A; --gold-ink:#C9A24A; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.hero{position:relative;color:#F4ECE0;background:#24122A}
+.hero img{width:100%;aspect-ratio:4/3;max-height:72vh;object-fit:cover;object-position:center 60%}
+.hero .cap{padding:24px 20px 28px}
+.hero .in{max-width:720px;margin:0 auto;display:grid;gap:10px}
+@media (min-width:760px){
+  .hero img{aspect-ratio:16/9}
+  .hero .cap{position:absolute;inset:auto 0 0 0;padding:96px 24px 32px;background:linear-gradient(to top,rgba(36,18,42,.94) 30%,rgba(36,18,42,0))}
+}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#C9A24A}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;margin:0;text-wrap:balance}
+.hero p{margin:0;max-width:38ch;color:#E9DFD0}
+.alt{font-size:.78rem;color:#B0A0B4}
+
+.wrap{max-width:720px;margin:0 auto;padding-inline:20px;padding-block:8px 64px;display:grid;gap:56px}
+.wrap>*{min-width:0}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-top:28px}
+.btn{display:inline-block;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;line-height:1.3;padding:14px 20px;border-radius:2px;background:var(--btn-bg);color:var(--btn-fg);border:1px solid var(--btn-bg)}
+@media (max-width:559px){
+  body{font-size:16px}
+  .cta-row,.links{display:grid;grid-template-columns:1fr;gap:10px}
+  .cta-row .btn,.links .btn,.offer .btn,.report summary{width:100%}
+}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn:hover{filter:brightness(1.08)}
+
+section{display:grid;gap:16px}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,4.2vw,2.2rem);line-height:1.15;margin:0;text-wrap:balance}
+.kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gold-ink)}
+p{margin:0;max-width:62ch}
+.split{display:grid;gap:24px;align-items:center}
+@media (min-width:700px){.split{grid-template-columns:1fr 1fr}.split.rev .media{order:2}}
+.split>div{min-width:0;display:grid;gap:14px}
+.media img{width:100%;aspect-ratio:4/5;object-fit:cover}
+
+.facts{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:4px 16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.facts b{font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink);padding-top:2px}
+@media (max-width:459px){.facts li{grid-template-columns:1fr}}
+
+.vals{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--line)}
+.vals li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.vals b{font-weight:600}
+.vals .n{font-family:var(--display);font-size:1.35rem;color:var(--gold-ink);font-variant-numeric:tabular-nums;text-align:right}
+.vals .d{grid-column:1/-1;color:var(--muted);font-size:.93rem}
+.lab{font-size:.88rem;color:var(--muted)}
+
+.yield{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline}
+.yield .big{font-family:var(--display);font-size:clamp(2.4rem,8vw,3.6rem);line-height:1;color:var(--gold-ink)}
+
+.offer{background:var(--surface);border:1px solid var(--line);padding:28px 22px;display:grid;gap:16px}
+.offer img{justify-self:center}
+.yield{padding-block:4px}
+.yield .big{padding-right:4px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);color:var(--gold-ink);font-size:1.2rem;line-height:1.4}
+
+.contact{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:28px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.mail{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:stretch;font-size:.95rem}
+.mail>span{grid-column:1/-1;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.mail .addr{background:var(--surface);border:1px solid var(--line);padding:12px 14px;user-select:all;text-decoration:none;font-weight:500;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mail button{font:inherit;font-size:.85rem;background:transparent;color:var(--fg);border:1px solid var(--line);padding:12px 14px;cursor:pointer}
+@media (max-width:559px){.mail{grid-template-columns:1fr}.mail .addr{text-align:center}}
+.report{display:grid;gap:14px}
+.report summary{list-style:none;cursor:pointer;width:max-content;max-width:100%}
+.report summary::-webkit-details-marker{display:none}
+.report[open] summary{margin-bottom:14px}
+.pages{display:grid;gap:16px}
+@media (min-width:700px){.pages{grid-template-columns:1fr 1fr}}
+.pages figure{margin:0;display:grid;gap:6px;min-width:0}
+.pages img{width:100%;border:1px solid var(--line);background:#fff}
+.pages figcaption{font-size:.8rem;color:var(--muted)}
+footer{font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="champ-ikenioun.jpg" alt="Saffron field in flower at Ikenioun, below the High Atlas mountains" width="1536" height="1067">
+  <div class="cap"><div class="in">
+    <span class="eyebrow">Ikenioun · High Atlas · 1,400 m</span>
+    <h1>Saffron from Ikenioun, for chefs</h1>
+    <p>A French saffron house from Montpellier. Grown at 1,400 m in Morocco's High Atlas.</p>
+  </div></div>
+</header>
+
+<main class="wrap">
+  <div class="cta-row">
+    <a class="btn" href="https://pack.safranexcellence.com" target="_blank" rel="noopener">Request a Chef's Evaluation Pack</a>
+    <a class="btn ghost" href="https://wa.me/33689395606" target="_blank" rel="noopener">WhatsApp Rachid</a>
+  </div>
+
+  <section class="split">
+    <div class="media"><img src="SE_7466_4x5.jpg" alt="Safran Excellence bottles of saffron in Moroccan bowls" width="1080" height="1350" loading="lazy"></div>
+    <div>
+      <span class="kicker">The terroir</span>
+      <h2>A demanding place, where every flower grows slowly</h2>
+      <p>Ikenioun is a small village at 1,400 m in Morocco's Atlas mountains.</p>
+      <ul class="facts">
+        <li><b>Altitude</b><span>1,400 m</span></li>
+        <li><b>Ground</b><span>Ancient volcanic ground, soil naturally rich in minerals</span></li>
+        <li><b>Climate</b><span>Dry mountain climate, with cold winters and snow in some years</span></li>
+        <li><b>Growing</b><span>Without pesticides or chemicals</span></li>
+      </ul>
+      <p>This terroir, together with our family's know-how, is where the “Excellence” in our name comes from.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="kicker">Our family's craft</span>
+    <h2>Patience at every step</h2>
+    <p>Picking, harvesting and trimming are done by hand, within the family and by people close to us. A know-how passed down from one generation to the next.</p>
+    <ul class="facts">
+      <li><b>Corms</b><span>From our own field, selected by hand each season: the largest, firmest corms, around 8 g on average, replanted with no treatment.</span></li>
+      <li><b>Picking</b><span>By hand at dawn, before sunrise. Picking stops once the sun is up.</span></li>
+      <li><b>Trimming</b><span>Each stigma trimmed by hand, slowly and with great care, so its three threads stay joined, as they were on the flower.</span></li>
+      <li><b>Pure stigmas</b><span>Only the red stigma is kept, with no yellow style.</span></li>
+      <li><b>Drying</b><span>Dried naturally for three months, laid on cloth in a room sheltered from light and damp, at room temperature.</span></li>
+      <li><b>Moisture</b><span>9.6 % in the lab report (ISO standard ≤ 12 %).</span></li>
+    </ul>
+    <p>My family grows it; Rachid checks, packs and delivers it himself. No middleman: excellence you can trace, from our field to your kitchen, and on to your guests.</p>
+  </section>
+
+  <section>
+    <span class="kicker">ISO 3632 · Lot 01</span>
+    <h2>What you get in the dish</h2>
+    <p>Lot 01 was analysed in France by YesWeLab, an independent COFRAC-accredited laboratory (ISO/IEC 17025), to the ISO 3632 standard. It is compliant on all four criteria.</p>
+    <ul class="vals">
+      <li><b>Flavour · picrocrocin</b><span class="n">82.9</span><span class="d">At the highest level of the standard. A deep, refined taste that adds depth without overpowering.</span></li>
+      <li><b>Aroma · safranal</b><span class="n">38.9</span><span class="d">A floral, honeyed aroma that holds through cooking.</span></li>
+      <li><b>Colour · crocin</b><span class="n">188.3</span><span class="d">A vibrant golden hue in sauces, rice and desserts.</span></li>
+      <li><b>Moisture</b><span class="n">9.6%</span><span class="d">Well below the 12% limit. The saffron keeps its strength over time.</span></li>
+    </ul>
+    <p class="lab">Harvest November 2024 · analysed 08/10/2025 · sample Saf251891. The real test is still your kitchen.</p>
+    <details class="report" id="report">
+      <summary class="btn ghost">View the lab report</summary>
+      <div class="pages">
+        <figure><img src="rapport-1.jpg" alt="ISO 3632 laboratory analysis by YesWeLab, English version" width="1571" height="2203" loading="lazy"><figcaption>English</figcaption></figure>
+        <figure><img src="rapport-2.jpg" alt="Analyse de laboratoire ISO 3632 par YesWeLab, version française" width="1571" height="2203" loading="lazy"><figcaption>Français</figcaption></figure>
+      </div>
+      <p class="lab">The full PDF is available on request, by WhatsApp or email.</p>
+    </details>
+  </section>
+
+  <section class="split rev">
+    <div class="media"><img src="SE_7500_4x5.jpg" alt="A spoon of saffron threads in front of Moroccan bowls" width="1080" height="1350" loading="lazy"></div>
+    <div>
+      <span class="kicker">Dosage</span>
+      <h2>Buy less, use more</h2>
+      <div class="yield"><span class="big">1 g</span><span>= 30 to 40 plates<br><span class="lab">about 25 to 33 mg per plate</span></span></div>
+      <p>A little goes a long way when the saffron is strong.</p>
+    </div>
+  </section>
+
+  <section class="offer" id="pack">
+    <span class="kicker">Chef's Evaluation Pack</span>
+    <h2>Taste first. Pay only if convinced.</h2>
+    <img src="SE_7513_4x5.jpg" alt="The Chef's Evaluation Pack: black box, velvet bag, bottle and card on zellige" width="1080" height="1350" loading="lazy" style="aspect-ratio:4/5;object-fit:cover;width:100%;max-width:420px">
+    <ol class="steps">
+      <li><span>Rachid brings the pack to your kitchen in person whenever possible, otherwise it comes by post. Nothing to pay when you receive it.</span></li>
+      <li><span>Inside: 1 g for you to taste, at no cost (30 to 40 plates), and a sealed 5 g jar.</span></li>
+      <li><span>You have three weeks to decide.</span></li>
+      <li><span>Convinced? Keep the 5 g jar and you receive the invoice. Not convinced? Post the jar back sealed, with the prepaid return label already in the box. The return is on us.</span></li>
+    </ol>
+    <div><a class="btn" href="https://pack.safranexcellence.com" target="_blank" rel="noopener">Request a Chef's Evaluation Pack</a></div>
+  </section>
+
+  <section class="contact">
+    <span class="kicker">Contact</span>
+    <h2>Talk to Rachid</h2>
+    <div class="links">
+      <a class="btn" href="https://wa.me/33689395606" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn ghost" href="https://pack.safranexcellence.com" target="_blank" rel="noopener">Request form</a>
+      <a class="btn ghost" href="https://www.instagram.com/safranexcellence/" target="_blank" rel="noopener">Instagram @safranexcellence</a>
+    </div>
+    <div class="mail"><span>Email</span><a id="mail" class="addr" href="mailto:chef@safranexcellence.com">chef@safranexcellence.com</a><button type="button" id="copy">Copy address</button></div>
+    <footer>Safran Excellence · Montpellier, France</footer>
+  </section>
+</main>
+
+<script>
+document.getElementById("copy").addEventListener("click", async e => {
+  const b = e.currentTarget, t = document.getElementById("mail").textContent;
+  try { await navigator.clipboard.writeText(t); b.textContent = "Address copied"; }
+  catch (err) { const r = document.createRange(); r.selectNodeContents(document.getElementById("mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Address selected"; }
+  setTimeout(() => b.textContent = "Copy address", 1800);
+});
+</script>
+</body>
+</html>
