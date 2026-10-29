@@ -228,6 +228,15 @@ document.getElementById("copy").addEventListener("click", async e => {
   catch (err) { const r = document.createRange(); r.selectNodeContents(document.getElementById("mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Address selected"; }
   setTimeout(() => b.textContent = "Copy address", 1800);
 });
+function openReport() {
+  if (location.hash === "#report") {
+    const d = document.getElementById("report");
+    d.open = true;
+    d.scrollIntoView({ block: "start" });
+  }
+}
+window.addEventListener("hashchange", openReport);
+openReport();
 </script>
 </body>
 </html>
