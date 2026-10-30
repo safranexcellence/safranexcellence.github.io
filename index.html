@@ -211,6 +211,7 @@ footer{border-top:1px solid var(--line);margin-top:var(--g5);padding-block:var(-
       <a class="btn ghost" href="https://www.instagram.com/safranexcellence/" target="_blank" rel="noopener">Instagram</a>
     </div>
     <div class="mail"><a id="mail" class="link" href="mailto:chef@safranexcellence.com" aria-label="Write to chef@safranexcellence.com">chef@safranexcellence.com</a><button type="button" id="copy">Copy</button></div>
+    <p class="small">Write with <a class="link" href="mailto:chef@safranexcellence.com">your mail app</a> · <a class="link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chef@safranexcellence.com" target="_blank" rel="noopener">Gmail</a> · <a class="link" href="https://outlook.live.com/mail/0/deeplink/compose?to=chef@safranexcellence.com" target="_blank" rel="noopener">Outlook</a></p>
   </section>
 
   <footer>Safran Excellence · Montpellier, France · <a class="link" href="https://www.instagram.com/safranexcellence/" target="_blank" rel="noopener">@safranexcellence</a></footer>
@@ -223,6 +224,12 @@ document.getElementById("copy").addEventListener("click", async e => {
   catch (err) { const r = document.createRange(); r.selectNodeContents(document.getElementById("mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected"; }
   setTimeout(() => b.textContent = "Copy", 1800);
 });
+/* On a computer, many people have no mail app set up: the address opens a Gmail draft instead. Phones keep the mail app. */
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  const m = document.getElementById("mail");
+  m.href = "https://mail.google.com/mail/?view=cm&fs=1&to=chef@safranexcellence.com";
+  m.target = "_blank"; m.rel = "noopener";
+}
 function openReport() {
   if (location.hash === "#report") {
     const d = document.getElementById("report-pages");
