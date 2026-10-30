@@ -27,13 +27,13 @@
 @font-face{font-family:"SE Text";src:url("../inter-600.woff2") format("woff2");font-weight:600;font-display:swap}
 
 /* Layout: one 640px column, every block starts on the same left edge.
-   Type: 4 sizes on the golden scale (S = M/sqrt(phi), L = M*phi, XL = L*sqrt(phi)).
+   Type: 4 consecutive sizes on the golden scale, each x sqrt(phi): S .786, M 1, L 1.272, XL 1.618.
    Spacing: golden steps 8 / 13 / 21 / 34 / 55 px. */
 :root{
   --violet:#24122A; --gold:#C9A24A; --cream:#F4ECE0;
   --bg:#F4ECE0; --surface:#FBF7F1; --fg:#24122A; --muted:#5E4B63; --line:#DCCFC0; --gold-ink:#7A5C14;
   --display:"SE Display",Georgia,serif; --text:"SE Text",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --s:.786rem; --m:1rem; --l:1.618rem; --xl:2.058rem;
+  --s:.786rem; --m:1rem; --l:1.272rem; --xl:1.618rem;
   --g1:8px; --g2:13px; --g3:21px; --g4:34px; --g5:55px;
   --col:640px; --label:8.5rem;
 }
@@ -60,30 +60,32 @@ p{margin:0}
 
 /* hero */
 .hero img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 62%;max-height:70vh}
-.intro{padding-block:var(--g4) var(--g4);display:grid;gap:var(--g2)}
-.kicker{font-size:var(--s);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.intro{padding-block:var(--g5) var(--g5);display:grid;gap:var(--g2)}
+.kicker{font-size:var(--s);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
 h1,h2{font-family:var(--display);font-weight:600;font-variant-numeric:lining-nums;margin:0;text-wrap:balance}
-h1{font-size:var(--xl);line-height:1.12}
-h2{font-size:var(--l);line-height:1.18}
+h1{font-size:var(--xl);line-height:1.2;letter-spacing:.005em}
+h2{font-size:var(--l);line-height:1.25;letter-spacing:.01em}
 .lead{color:var(--muted);max-width:34em}
 
 /* buttons */
 .actions{display:grid;gap:var(--g2);margin-top:var(--g2)}
 @media (min-width:560px){.actions{grid-template-columns:1.618fr 1fr}}
-.btn{display:block;text-align:center;text-decoration:none;font-weight:600;font-size:var(--m);line-height:1.3;padding:15px 18px;border-radius:2px;background:var(--violet);color:var(--cream);border:1px solid var(--violet)}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:500;font-size:var(--s);letter-spacing:.14em;text-transform:uppercase;line-height:1.3;padding:17px 18px;border-radius:2px;background:var(--violet);color:var(--cream);border:1px solid var(--violet)}
 .btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{background:var(--gold);color:var(--violet);border-color:var(--gold)}
   :root:not([data-theme="light"]) .btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}}
 
 /* sections */
-section{border-top:1px solid var(--line);padding-block:var(--g5) 0;display:grid;gap:var(--g3)}
+section{border-top:1px solid var(--line);padding-block:var(--g5) 0;margin-top:var(--g4);display:grid;gap:var(--g3)}
+section:first-of-type{margin-top:0}
 .head{display:grid;gap:var(--g1)}
 .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .rows li{display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g1) var(--g3);padding:var(--g2) 0;border-bottom:1px solid var(--line)}
-.rows b{font-size:var(--s);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);padding-top:.22em}
+.rows b{font-size:var(--s);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);padding-top:.22em}
 @media (max-width:459px){.rows li{grid-template-columns:1fr;gap:2px}}
 .note{color:var(--muted)}
 
+.rows li:last-child,.steps li:last-child{border-bottom:0}
 /* lab values */
 .vals li{grid-template-columns:var(--label) minmax(0,1fr) auto;grid-template-areas:"k d n"}
 .vals b{grid-area:k}.vals .d{grid-area:d}
@@ -113,7 +115,7 @@ details[open] summary{margin-bottom:var(--g3)}
 /* contact */
 .mail{display:grid;grid-template-columns:minmax(0,1fr) auto;border:1px solid var(--line);background:var(--surface)}
 .mail a{padding:15px 18px;text-decoration:none;font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mail button{font:inherit;font-size:var(--s);font-weight:600;background:transparent;color:var(--fg);border:0;border-left:1px solid var(--line);padding:0 18px;cursor:pointer}
+.mail button{font:inherit;font-size:var(--s);font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:transparent;color:var(--fg);border:0;border-left:1px solid var(--line);padding:0 18px;cursor:pointer}
 footer{border-top:1px solid var(--line);margin-top:var(--g5);padding-block:var(--g3) var(--g4);font-size:var(--s);color:var(--muted)}
 </style>
 </head>
