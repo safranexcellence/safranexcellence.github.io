@@ -22,6 +22,7 @@
 <link rel="preload" href="../inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"SE Display";src:url("../cormorant-garamond-600.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"SE Display";src:url("../cormorant-garamond-500-italic.woff2") format("woff2");font-weight:500;font-style:italic;font-display:swap}
 @font-face{font-family:"SE Text";src:url("../inter-400.woff2") format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"SE Text";src:url("../inter-500.woff2") format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:"SE Text";src:url("../inter-600.woff2") format("woff2");font-weight:600;font-display:swap}
@@ -47,6 +48,11 @@ html{font-size:17px;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--text);font-size:var(--m);line-height:1.6}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
+/* text links: soft gold underline, clearer on hover */
+.link{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1px;text-underline-offset:4px}
+.link:hover{text-decoration-thickness:2px}
+strong{font-weight:600}
+.say{font-family:var(--display);font-style:italic;font-weight:500;font-size:var(--l);line-height:1.4;font-variant-numeric:lining-nums}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 p{margin:0}
 
@@ -80,7 +86,7 @@ section{border-top:1px solid var(--line);padding-block:var(--g5) 0;margin-top:va
 section:first-of-type{margin-top:0}
 .head{display:grid;gap:var(--g1)}
 .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.rows li{display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g1) var(--g3);padding:var(--g2) 0;border-bottom:1px solid var(--line)}
+.rows li{display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g1) var(--g3);padding:var(--g3) 0;border-bottom:1px solid var(--line)}
 .rows b{font-size:var(--s);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);padding-top:.22em}
 @media (max-width:459px){.rows li{grid-template-columns:1fr;gap:2px}}
 .note{color:var(--muted)}
@@ -108,7 +114,7 @@ details[open] summary{margin-bottom:var(--g3)}
 @media (max-width:459px){.dose{grid-template-columns:auto minmax(0,1fr)}}
 /* pack steps */
 .steps{list-style:none;margin:0;padding:0;counter-reset:s;border-top:1px solid var(--line)}
-.steps li{counter-increment:s;display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g3);padding:var(--g2) 0;border-bottom:1px solid var(--line)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g3);padding:var(--g3) 0;border-bottom:1px solid var(--line)}
 .steps li::before{content:"0" counter(s);font-weight:600;color:var(--gold-ink);font-variant-numeric:tabular-nums}
 @media (max-width:459px){.steps li{grid-template-columns:2rem minmax(0,1fr);gap:var(--g2)}}
 
@@ -174,13 +180,18 @@ footer{border-top:1px solid var(--line);margin-top:var(--g5);padding-block:var(-
         <figure><img src="../rapport-1.jpg" alt="ISO 3632 laboratory analysis by YesWeLab, English version" width="1571" height="2203" loading="lazy"><figcaption class="small">English</figcaption></figure>
         <figure><img src="../rapport-2.jpg" alt="Analyse de laboratoire ISO 3632 par YesWeLab, version française" width="1571" height="2203" loading="lazy"><figcaption class="small">Français</figcaption></figure>
       </div>
-      <p class="small">The full PDF is available on request, by WhatsApp or email.</p>
+      <p class="small">The full PDF is available on request, by <a class="link" href="https://wa.me/33689395606" target="_blank" rel="noopener">WhatsApp</a> or <a class="link" href="mailto:chef@safranexcellence.com">email</a>.</p>
     </details>
   </section>
 
-  <section id="dosage">
-    <div class="head"><span class="kicker">Dosage</span><h2>Buy less, use more</h2></div>
-    <div class="dose"><span class="big">1 g</span><span>30 to 40 plates<br><span class="small">about 25 to 33 mg per plate</span></span></div>
+  <section id="kitchen">
+    <div class="head"><span class="kicker">In the kitchen</span><h2>Buy less, use more</h2></div>
+    <ul class="rows">
+      <li><b>Dosage</b><span><strong>0.1 g for 3 to 4 plates</strong></span></li>
+      <li><b>Storage</b><span>Jar tightly closed, in its pouch, away from light, heat and damp.</span></li>
+      <li><b>For your guests</b><span class="say">“This saffron comes from one family, in a village at 1,400 m in Morocco’s Atlas mountains. Every flower is picked by hand at dawn, every stigma trimmed by hand, then dried for three months.”</span></li>
+      <li><b>For your menu</b><span class="say">Family-grown Atlas saffron, Safran Excellence</span></li>
+    </ul>
   </section>
 
   <section id="pack">
@@ -200,10 +211,10 @@ footer{border-top:1px solid var(--line);margin-top:var(--g5);padding-block:var(-
       <a class="btn" href="https://wa.me/33689395606" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn ghost" href="https://www.instagram.com/safranexcellence/" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <div class="mail"><a id="mail" href="mailto:chef@safranexcellence.com">chef@safranexcellence.com</a><button type="button" id="copy">Copy</button></div>
+    <div class="mail"><a id="mail" class="link" href="mailto:chef@safranexcellence.com">chef@safranexcellence.com</a><button type="button" id="copy">Copy</button></div>
   </section>
 
-  <footer>Safran Excellence · Montpellier, France</footer>
+  <footer>Safran Excellence · Montpellier, France · <a class="link" href="https://www.instagram.com/safranexcellence/" target="_blank" rel="noopener">@safranexcellence</a></footer>
 </main>
 
 <script>
