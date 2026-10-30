@@ -40,6 +40,10 @@ img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
+.brand{background:#24122A;padding:18px 20px 14px;display:flex;justify-content:center}
+.brand a{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#C9A24A}
+.brand img{width:72px;height:72px}
+.brand span{font-family:var(--display);font-size:.95rem;letter-spacing:.32em;text-transform:uppercase;padding-left:.32em}
 .hero{position:relative;color:#F4ECE0;background:#24122A}
 .hero img{width:100%;aspect-ratio:4/3;max-height:72vh;object-fit:cover;object-position:center 60%}
 .hero .cap{padding:24px 20px 28px}
@@ -117,6 +121,8 @@ footer{font-size:.8rem;color:var(--muted)}
 </style>
 </head>
 <body>
+
+<div class="brand"><a href="https://safranexcellence.com" aria-label="Safran Excellence"><img src="logo.svg" alt="Safran Excellence logo, a saffron flower" width="72" height="72"><span>Safran Excellence</span></a></div>
 
 <header class="hero">
   <img src="champ-ikenioun.jpg" alt="Saffron field in flower at Ikenioun, below the High Atlas mountains" width="1536" height="1067">
