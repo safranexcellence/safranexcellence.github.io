@@ -90,11 +90,12 @@ h2{font-size:var(--l);line-height:1.25;letter-spacing:.01em}
 
 /* sections */
 /* one block per theme, separated by a thicker gold rule */
-section{border-top:2px solid var(--gold);padding-block:var(--g4) var(--g4);display:grid;gap:var(--g3)}
-.head{display:grid;gap:var(--g1);justify-items:center;text-align:center}
+section{border-top:2px solid var(--gold);padding-block:var(--g4) var(--g4);display:grid;gap:var(--g2)}
+.head{display:grid;gap:4px;justify-items:center;text-align:center}
 /* theme labels: a quarter golden step above S (x 1.128), semibold */
-.head .kicker{font-size:.886rem;font-weight:600;letter-spacing:.2em}
-.head::after{content:"";width:34px;height:1px;background:var(--gold);margin-top:var(--g2)}
+.head .kicker{font-size:.975rem;font-weight:600;letter-spacing:.2em}
+#contact .head .kicker{font-size:.886rem}
+.head::after{content:"";width:34px;height:1px;background:var(--gold);margin-top:var(--g1)}
 .rows{list-style:none;margin:0;padding:0}
 .rows li{display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g1) var(--g3);padding:var(--g2) 0;border-bottom:1px solid var(--line)}
 .rows b{font-size:var(--s);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);padding-top:.22em}
@@ -148,7 +149,7 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
     <h1>Family-grown saffron</h1>
     <span class="rule" aria-hidden="true"></span>
     <p class="say">Every stigma carries the rigour of the lab and the memory of the land.</p>
-    <p class="lead">From our field to your kitchen, no middleman. Lab-tested in France.</p>
+    <p class="lead">From our field to your kitchen,<br>no middleman. Lab-tested in France.</p>
     <div class="actions">
       <a class="btn" href="https://pack.safranexcellence.com" target="_blank" rel="noopener">Request a Chef’s Evaluation Pack</a>
       <a class="btn ghost" href="https://wa.me/33689395606" target="_blank" rel="noopener">WhatsApp Rachid</a>
@@ -166,7 +167,7 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
   </section>
 
   <section id="craft">
-    <div class="head"><span class="kicker">Our family's craft</span><h2>Done by hand, with patience</h2></div>
+    <div class="head"><span class="kicker">Our family's craft</span><h2>Done by hand, with patience and passion</h2></div>
     <ul class="rows">
       <li><b>Corms</b><span>From our own field. Each season the largest, firmest corms, around 8 g, are selected by hand and replanted untreated.</span></li>
       <li><b>Picking</b><span>By hand at dawn, before sunrise.</span></li>
