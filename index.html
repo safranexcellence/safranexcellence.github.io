@@ -62,7 +62,8 @@ p{margin:0}
 .top{background:var(--violet);padding:var(--g3) 0 var(--g2)}
 .top a{display:flex;flex-direction:column;align-items:center;gap:var(--g1);text-decoration:none;color:var(--gold)}
 .top img{width:64px;height:64px}
-.top span{font-family:var(--display);font-weight:600;font-size:var(--m);letter-spacing:.32em;text-transform:uppercase;padding-left:.32em}
+/* house name and page title share font, weight, tracking and gold; the title is one quarter golden step larger (x 1.128) */
+.top span{font-family:var(--display);font-weight:600;font-size:var(--m);letter-spacing:.2em;text-transform:uppercase;padding-left:.2em}
 
 /* hero */
 .hero img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 62%;max-height:70vh}
@@ -72,11 +73,11 @@ p{margin:0}
 .rule{display:block;width:34px;height:1px;background:var(--gold);margin:var(--g1) auto}
 .kicker{font-size:var(--s);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
 h1,h2{font-family:var(--display);font-weight:600;font-variant-numeric:lining-nums;margin:0;text-wrap:balance}
-h1{font-size:var(--l);line-height:1.25;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);padding-left:.16em}
+h1{font-size:1.128rem;line-height:1.25;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);padding-left:.2em}
 h2{font-size:var(--l);line-height:1.25;letter-spacing:.01em}
 .lead{color:var(--muted);max-width:30em}
 .intro .say,.intro .lead{text-wrap:balance}
-@media (max-width:380px){h1{letter-spacing:.12em;padding-left:.12em}}
+@media (max-width:340px){h1{letter-spacing:.14em;padding-left:.14em}}
 
 /* buttons */
 .actions{display:grid;gap:var(--g2);margin-top:var(--g2)}
