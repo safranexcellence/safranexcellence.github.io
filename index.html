@@ -36,10 +36,11 @@
   --s:.786rem; --m:1rem; --l:1.272rem; --xl:1.618rem;
   --g1:8px; --g2:13px; --g3:21px; --g4:34px; --g5:55px;
   --col:640px; --label:8.5rem;
+  --tint:rgba(201,162,74,.12); --tint-hover:rgba(201,162,74,.22); --tint-line:rgba(201,162,74,.55);
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#1A0D1F; --surface:#24122A; --fg:#F4ECE0; --muted:#B9A9BE; --line:#3D2A44; --gold-ink:#C9A24A; color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#1A0D1F; --surface:#24122A; --fg:#F4ECE0; --muted:#B9A9BE; --line:#3D2A44; --gold-ink:#C9A24A; color-scheme:dark}
+  --bg:#1A0D1F; --surface:#24122A; --fg:#F4ECE0; --muted:#B9A9BE; --line:#3D2A44; --gold-ink:#C9A24A; --tint:rgba(201,162,74,.14); --tint-hover:rgba(201,162,74,.26); color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1A0D1F; --surface:#24122A; --fg:#F4ECE0; --muted:#B9A9BE; --line:#3D2A44; --gold-ink:#C9A24A; --tint:rgba(201,162,74,.14); --tint-hover:rgba(201,162,74,.26); color-scheme:dark}
 
 *{box-sizing:border-box}
 html{font-size:17px;-webkit-text-size-adjust:100%}
@@ -75,15 +76,17 @@ h2{font-size:var(--l);line-height:1.25;letter-spacing:.01em}
 .lead{color:var(--muted);max-width:30em}
 .intro .say,.intro .lead{text-wrap:balance}
 @media (max-width:380px){h1{letter-spacing:.12em;padding-left:.12em}}
-@media (max-width:430px){.btn{letter-spacing:.08em}}
 
 /* buttons */
 .actions{display:grid;gap:var(--g2);margin-top:var(--g2)}
 @media (min-width:560px){.actions{grid-template-columns:1.618fr 1fr}}
-.btn{display:block;text-align:center;text-decoration:none;font-weight:500;font-size:var(--s);letter-spacing:.14em;text-transform:uppercase;line-height:1.3;padding:17px 12px;white-space:nowrap;border-radius:2px;background:var(--violet);color:var(--cream);border:1px solid var(--violet)}
-.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{background:var(--gold);color:var(--violet);border-color:var(--gold)}
-  :root:not([data-theme="light"]) .btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}}
+/* every clickable box shares one style: a light gold tint, a fine gold border, gold text */
+.btn{display:block;text-align:center;text-decoration:none;font-weight:600;font-size:var(--s);letter-spacing:.14em;text-transform:uppercase;line-height:1.3;padding:17px 12px;white-space:nowrap;border-radius:2px;background:var(--tint);color:var(--gold-ink);border:1px solid var(--tint-line);transition:background .2s}
+.btn:hover,.btn:focus-visible{background:var(--tint-hover)}
+@media (max-width:430px){.btn{letter-spacing:.08em}}
+
+
+
 
 /* sections */
 /* one block per theme, separated by a thicker gold rule */
@@ -126,9 +129,10 @@ details[open] summary{margin-bottom:var(--g3)}
 @media (max-width:459px){.steps li{grid-template-columns:2rem minmax(0,1fr);gap:var(--g2)}}
 
 /* contact */
-.mail{display:grid;grid-template-columns:minmax(0,1fr) auto;border:1px solid var(--line);background:var(--surface)}
-.mail a{padding:15px 18px;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1px;text-underline-offset:4px;font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mail button{font:inherit;font-size:var(--s);font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:transparent;color:var(--fg);border:0;border-left:1px solid var(--line);padding:0 18px;cursor:pointer}
+.mail{display:grid;grid-template-columns:minmax(0,1fr) auto;border:1px solid var(--tint-line);background:var(--tint);border-radius:2px}
+.mail a{padding:15px 18px;color:var(--gold-ink);text-decoration:none;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mail a:hover{background:var(--tint-hover)}
+.mail button{font:inherit;font-size:var(--s);font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:transparent;color:var(--gold-ink);border:0;border-left:1px solid var(--tint-line);padding:0 18px;cursor:pointer}
 footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3) var(--g4);font-size:var(--s);color:var(--muted)}
 </style>
 </head>
