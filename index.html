@@ -66,7 +66,8 @@ p{margin:0}
 
 /* hero */
 .hero img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 62%;max-height:70vh}
-.intro{padding-block:var(--g5);display:grid;gap:var(--g2);justify-items:center;text-align:center}
+.intro{padding-block:var(--g2) var(--g5);display:grid;gap:var(--g2);justify-items:center;text-align:center}
+.place{font-family:var(--display);font-style:italic;font-variant-numeric:lining-nums;font-weight:500;font-size:var(--m);color:var(--muted);margin-top:calc(-1 * var(--g2) + 2px)}
 .intro .actions{justify-self:stretch;text-align:left}
 .rule{display:block;width:34px;height:1px;background:var(--gold);margin:var(--g1) auto}
 .kicker{font-size:var(--s);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
@@ -145,8 +146,8 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
 
 <main class="col">
   <div class="intro">
-    <span class="kicker">Ikenioun · 1,400 m · Morocco</span>
     <h1>Family-grown saffron</h1>
+    <span class="place">Ikenioun · 1,400 m · Morocco</span>
     <span class="rule" aria-hidden="true"></span>
     <p class="say">Every stigma carries the rigour of the lab and the memory of the land.</p>
     <p class="lead">From our field to your kitchen,<br>no middleman. Lab-tested in France.</p>
@@ -167,7 +168,7 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
   </section>
 
   <section id="craft">
-    <div class="head"><span class="kicker">Our family's craft</span><h2>Done by hand, with patience and passion</h2></div>
+    <div class="head"><span class="kicker">Our family's craft</span><h2>By hand, with patience and passion</h2></div>
     <ul class="rows">
       <li><b>Corms</b><span>From our own field. Each season the largest, firmest corms, around 8 g, are selected by hand and replanted untreated.</span></li>
       <li><b>Picking</b><span>By hand at dawn, before sunrise.</span></li>
@@ -179,7 +180,7 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
   </section>
 
   <section id="report">
-    <div class="head"><span class="kicker">Lab report · ISO 3632 · Lot 01</span><h2>Tested in France</h2></div>
+    <div class="head"><span class="kicker">Lab report · ISO 3632</span><h2>Lot 01, tested in France</h2></div>
     <p>Analysed by YesWeLab, an independent laboratory accredited by COFRAC (ISO/IEC 17025). Compliant on all four criteria of the standard.</p>
     <ul class="rows vals">
       <li><b>Flavour</b><span class="d">Picrocrocin, at the highest level of the standard</span><span class="n">82.9</span></li>
