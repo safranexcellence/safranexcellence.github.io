@@ -70,9 +70,11 @@ p{margin:0}
 .rule{display:block;width:34px;height:1px;background:var(--gold);margin:var(--g1) auto}
 .kicker{font-size:var(--s);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
 h1,h2{font-family:var(--display);font-weight:600;font-variant-numeric:lining-nums;margin:0;text-wrap:balance}
-h1{font-size:var(--xl);line-height:1.25;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);padding-left:.16em}
+h1{font-size:var(--l);line-height:1.25;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);padding-left:.16em}
 h2{font-size:var(--l);line-height:1.25;letter-spacing:.01em}
 .lead{color:var(--muted);max-width:30em}
+.intro .say,.intro .lead{text-wrap:balance}
+@media (max-width:380px){h1{letter-spacing:.12em;padding-left:.12em}}
 
 /* buttons */
 .actions{display:grid;gap:var(--g2);margin-top:var(--g2)}
