@@ -99,6 +99,12 @@ h2{font-size:var(--l);line-height:1.25;letter-spacing:.01em}
 
 
 
+/* keep every block inside its card, even with a long button label */
+section,main,.intro{grid-template-columns:minmax(0,1fr)}
+section>*,.intro>*{min-width:0}
+.btn{white-space:normal}
+.steps li span,.rows li span{overflow-wrap:anywhere}
+
 /* quick menu */
 .nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0 0 var(--g2)}
 .nav a{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--gold-ink);border:1px solid var(--tint-line);border-radius:99px;padding:6px 11px;background:var(--surface)}
