@@ -66,8 +66,8 @@ p{margin:0}
 .top span{font-family:var(--display);font-weight:600;font-size:var(--m);letter-spacing:.2em;text-transform:uppercase;padding-left:.2em}
 
 /* hero */
-.hero img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 62%;max-height:70vh}
-.intro{padding-block:var(--g2) var(--g5);display:grid;gap:var(--g2);justify-items:center;text-align:center}
+.hero img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 62%;max-height:42vh}
+.intro{padding-block:var(--g2) var(--g3);display:grid;gap:var(--g2);justify-items:center;text-align:center}
 .place{font-family:var(--display);font-style:italic;font-variant-numeric:lining-nums;font-weight:500;font-size:var(--m);color:var(--muted);margin-top:calc(-1 * var(--g2) + 2px)}
 .intro .actions{justify-self:stretch;text-align:left}
 .rule{display:block;width:34px;height:1px;background:var(--gold);margin:var(--g1) auto}
@@ -83,25 +83,39 @@ h2{font-size:var(--l);line-height:1.25;letter-spacing:.01em}
 .actions{display:grid;gap:var(--g2);margin-top:var(--g2)}
 @media (min-width:560px){.actions{grid-template-columns:1.618fr 1fr}}
 /* every clickable box shares one style: a light gold tint, a fine gold border, gold text */
-.btn{display:block;text-align:center;text-decoration:none;font-weight:600;font-size:var(--s);letter-spacing:.14em;text-transform:uppercase;line-height:1.3;padding:17px 12px;white-space:nowrap;border-radius:2px;background:var(--tint);color:var(--gold-ink);border:1px solid var(--tint-line);transition:background .2s}
-.btn:hover,.btn:focus-visible{background:var(--tint-hover)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;text-decoration:none;font-weight:600;font-size:var(--s);letter-spacing:.12em;text-transform:uppercase;line-height:1.3;padding:16px 12px;white-space:nowrap;border-radius:4px;background:var(--violet);color:var(--cream);border:1px solid var(--violet);box-shadow:0 2px 0 var(--gold);transition:transform .15s,box-shadow .15s;cursor:pointer}
+.btn::after{content:"\2192";font-size:1.15em;letter-spacing:0;color:var(--gold)}
+.btn:hover,.btn:focus-visible{transform:translateY(-1px);box-shadow:0 3px 0 var(--gold)}
+.btn.ghost{background:var(--tint);color:var(--gold-ink);border-color:var(--tint-line);box-shadow:none}
+.btn.ghost::after{color:var(--gold-ink)}
+.btn.ghost:hover,.btn.ghost:focus-visible{background:var(--tint-hover)}
+:root[data-theme="dark"] .btn:not(.ghost){background:var(--gold);color:#24122A;border-color:var(--gold)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn:not(.ghost){background:var(--gold);color:#24122A;border-color:var(--gold)}:root:not([data-theme="light"]) .btn:not(.ghost)::after{color:#24122A}}
+.hint{font-size:.72rem;letter-spacing:.06em;color:var(--muted);text-align:center;margin-top:-4px}
+.link::after{content:" \2197";font-size:.85em;color:var(--gold-ink);text-decoration:none;display:inline-block}
+#mail.link::after{content:""}
 @media (max-width:430px){.btn{letter-spacing:.08em}}
 
 
 
 
+/* quick menu */
+.nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0 0 var(--g2)}
+.nav a{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--gold-ink);border:1px solid var(--tint-line);border-radius:99px;padding:6px 11px;background:var(--surface)}
+.nav a:hover{background:var(--tint-hover)}
+
 /* sections */
 /* one block per theme, separated by a thicker gold rule */
-section{border-top:2px solid var(--gold);padding-block:var(--g4) var(--g4);display:grid;gap:var(--g2)}
+section{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:6px;padding:var(--g3) 18px;margin-bottom:var(--g3);display:grid;gap:var(--g2);scroll-margin-top:12px;box-shadow:0 1px 0 rgba(36,18,42,.04)}
 .head{display:grid;gap:4px;justify-items:center;text-align:center}
 /* theme labels: a quarter golden step above S (x 1.128), semibold */
 .head .kicker{font-size:.975rem;font-weight:600;letter-spacing:.2em}
 #contact .head .kicker{font-size:.886rem}
 .head::after{content:"";width:34px;height:1px;background:var(--gold);margin-top:var(--g1)}
 .rows{list-style:none;margin:0;padding:0}
-.rows li{display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g1) var(--g3);padding:var(--g2) 0;border-bottom:1px solid var(--line)}
+.rows li{display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:4px var(--g3);padding:var(--g1) 0;border-bottom:1px solid var(--line)}
 .rows b{font-size:var(--s);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);padding-top:.22em}
-@media (max-width:459px){.rows li{grid-template-columns:1fr;gap:2px}}
+@media (max-width:459px){.rows li{grid-template-columns:5.4rem minmax(0,1fr);gap:0 10px;font-size:.94rem}.rows b{font-size:.66rem;letter-spacing:.08em;padding-top:.3em}section{padding:var(--g2) 14px}.col{padding-inline:12px}}
 .note{color:var(--muted)}
 
 .rows li:last-child,.steps li:last-child{border-bottom:0}
@@ -109,12 +123,14 @@ section{border-top:2px solid var(--gold);padding-block:var(--g4) var(--g4);displ
 .vals li{grid-template-columns:var(--label) minmax(0,1fr) auto;grid-template-areas:"k d n"}
 .vals b{grid-area:k}.vals .d{grid-area:d}
 .vals .n{grid-area:n;font-weight:600;color:var(--gold-ink);font-variant-numeric:tabular-nums;text-align:right}
-@media (max-width:459px){.vals li{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"k n" "d d"}}
+@media (max-width:459px){.vals li{grid-template-columns:5.4rem minmax(0,1fr) auto;grid-template-areas:"k d n"}}
 .small{font-size:var(--s);color:var(--muted)}
 details{display:grid;gap:var(--g3)}
 summary{list-style:none;cursor:pointer}
 summary::-webkit-details-marker{display:none}
 details[open] summary{margin-bottom:var(--g3)}
+details summary.btn::after{content:"\25BE"}
+details[open] summary.btn::after{content:"\25B4"}
 .pages{display:grid;gap:var(--g3)}
 @media (min-width:560px){.pages{grid-template-columns:1fr 1fr}}
 .pages figure{margin:0;display:grid;gap:var(--g1)}
@@ -127,7 +143,7 @@ details[open] summary{margin-bottom:var(--g3)}
 @media (max-width:459px){.dose{grid-template-columns:auto minmax(0,1fr)}}
 /* pack steps */
 .steps{list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g3);padding:var(--g2) 0;border-bottom:1px solid var(--line)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:var(--label) minmax(0,1fr);gap:var(--g3);padding:var(--g1) 0;border-bottom:1px solid var(--line)}
 .steps li::before{content:"0" counter(s);font-weight:600;color:var(--gold-ink);font-variant-numeric:tabular-nums}
 @media (max-width:459px){.steps li{grid-template-columns:2rem minmax(0,1fr);gap:var(--g2)}}
 
@@ -136,7 +152,7 @@ details[open] summary{margin-bottom:var(--g3)}
 .mail a{padding:15px 18px;color:var(--gold-ink);text-decoration:none;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mail a:hover{background:var(--tint-hover)}
 .mail button{font:inherit;font-size:var(--s);font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:transparent;color:var(--gold-ink);border:0;border-left:1px solid var(--tint-line);padding:0 18px;cursor:pointer}
-footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3) var(--g4);font-size:var(--s);color:var(--muted)}
+footer{border-top:0;text-align:center;padding-block:var(--g3) var(--g4);font-size:var(--s);color:var(--muted)}
 </style>
 </head>
 <body>
@@ -156,7 +172,12 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
       <a class="btn" href="https://pack.safranexcellence.com" target="_blank" rel="noopener">Request a Chef’s Evaluation Pack</a>
       <a class="btn ghost" href="https://wa.me/33689395606" target="_blank" rel="noopener">WhatsApp Rachid</a>
     </div>
+    <p class="hint">Tap or click a button to open it</p>
   </div>
+
+  <nav class="nav" aria-label="On this page">
+    <a href="#terroir">Terroir</a><a href="#craft">Craft</a><a href="#report">Lab report</a><a href="#kitchen">Kitchen</a><a href="#pack">Pack</a><a href="#contact">Contact</a>
+  </nav>
 
   <section id="terroir">
     <div class="head"><span class="kicker">The terroir</span><h2>A mountain village at 1,400 m</h2></div>
@@ -181,7 +202,7 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
   </section>
 
   <section id="report">
-    <div class="head"><span class="kicker">Lab report · ISO 3632 · Lot 01</span><h2>Lot 01, tested in France</h2></div>
+    <div class="head"><span class="kicker">Lab report · ISO 3632</span><h2>Lot 01, tested in France</h2></div>
     <p>Analysed by YesWeLab, an independent laboratory accredited by COFRAC (ISO/IEC 17025). Compliant on all four criteria of the standard.</p>
     <ul class="rows vals">
       <li><b>Flavour</b><span class="d">Picrocrocin, at the highest level of the standard</span><span class="n">82.9</span></li>
@@ -192,12 +213,13 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
     <p class="small">Harvest: November 2024 · analysed 08/10/2025 · sample Saf251891</p>
     <p>This is the lot in our Chef’s Evaluation Pack. Every lot we sell comes with its own lab report, sent to you before delivery.</p>
     <details id="report-pages">
-      <summary class="btn ghost">View the lab report</summary>
+      <summary class="btn ghost">View the full lab report</summary>
       <div class="pages">
         <figure><img src="rapport-1.jpg" alt="Summary of the YesWeLab ISO 3632 analysis, English version" width="1571" height="2222" loading="lazy"><figcaption class="small">English</figcaption></figure>
         <figure><img src="rapport-2.jpg" alt="Synthèse de l'analyse ISO 3632 YesWeLab, version française" width="1571" height="2222" loading="lazy"><figcaption class="small">Français</figcaption></figure>
       </div>
     </details>
+    <p class="hint">Tap to open the two pages of the report</p>
   </section>
 
   <section id="kitchen">
@@ -215,10 +237,11 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
     <ol class="steps">
       <li><span>I bring the pack to your kitchen in person whenever possible, otherwise it comes by post. Nothing to pay when you receive it.</span></li>
       <li><span>Inside: 1 g for you to taste, at no cost (30 to 40 plates), and a sealed 5 g jar.</span></li>
-      <li><span>You have three weeks to decide, then just tell me your choice.</span></li>
+      <li><span>Take the time you need (three weeks is usual), then just tell me your choice.</span></li>
       <li><span>Convinced? Keep the 5 g jar; the invoice comes by email or WhatsApp. Not convinced? A prepaid return label comes the same way, or I collect the sealed jar on my next visit. The return is on us.</span></li>
     </ol>
     <a class="btn" href="https://pack.safranexcellence.com" target="_blank" rel="noopener">Request a Chef’s Evaluation Pack</a>
+    <p class="hint">Opens a short form, about one minute</p>
   </section>
 
   <section id="contact">
@@ -227,7 +250,9 @@ footer{border-top:2px solid var(--gold);text-align:center;padding-block:var(--g3
       <a class="btn" href="https://wa.me/33689395606" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn ghost" href="https://www.instagram.com/safranexcellence/" target="_blank" rel="noopener">Instagram</a>
     </div>
+    <p class="hint">Tap to open WhatsApp or Instagram</p>
     <div class="mail"><a id="mail" class="link" href="mailto:chef@safranexcellence.com" aria-label="Write to chef@safranexcellence.com">chef@safranexcellence.com</a><button type="button" id="copy">Copy</button></div>
+    <p class="hint">Tap the address to write, or Copy it</p>
     <p class="small">Write with <a class="link" href="mailto:chef@safranexcellence.com">your mail app</a> · <a class="link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chef@safranexcellence.com" target="_blank" rel="noopener">Gmail</a> · <a class="link" href="https://outlook.live.com/mail/0/deeplink/compose?to=chef@safranexcellence.com" target="_blank" rel="noopener">Outlook</a></p>
   </section>
 
